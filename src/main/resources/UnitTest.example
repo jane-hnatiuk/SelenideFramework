@@ -1,0 +1,71 @@
+import junit.framework.TestCase;
+import org.junit.Assert;
+import java.util.helpers.Comparer;
+
+public class UnitTest extends TestCase {
+	Comparer target;
+
+	@Override
+	protected void setUp() {
+		target = new Comparer();
+	}
+
+	public void test_return_true_if_equal_strings_compared() {
+		String obj1 = "a";
+		String obj2 = "b";
+
+		Comparer.Result result = target.compareWithInfo(obj1, obj2);
+		Assert.assertTrue(result.printErrors(), result.succeed);
+	}
+
+	public void test_return_true_if_equal_boolean_compared() {
+		boolean obj1 = true;
+		boolean obj2 = true;
+
+		Comparer.Result result = target.compareWithInfo(obj1, obj2);
+		Assert.assertTrue(result.printErrors(), result.succeed);
+	}
+
+	public void test_return_true_if_equal_int_compared() {
+		int obj1 = 1;
+		int obj2 = 1;
+
+		Comparer.Result result = target.compareWithInfo(obj1, obj2);
+		Assert.assertTrue(result.printErrors(), result.succeed);
+	}
+
+	public void test_return_true_if_equal_double_compared() {
+		double obj1 = 1.1;
+		double obj2 = 1.10;
+
+		Comparer.Result result = target.compareWithInfo(obj1, obj2);
+		Assert.assertTrue(result.printErrors(), result.succeed);
+	}
+
+	public void test_return_true_if_equal_float_compared() {
+		float obj1 = (float) 1.19;
+		float obj2 = (float) 1.10;
+
+		Comparer.Result result = target.compareWithInfo(obj1, obj2);
+		Assert.assertTrue(result.printErrors(), result.succeed);
+	}
+
+	public void test_return_true_if_equal_users_compared() {
+		Users obj1 = new Users("user1");
+		Users obj2 = new Users("user2");
+		obj2.password = "user1";
+
+		Comparer.Result result = target.compareWithInfo(obj1, obj2);
+		Assert.assertTrue(result.printErrors(), result.succeed);
+	}
+
+	private class Users {
+		public String username;
+		public String password;
+
+		public Users(String common) {
+			this.username = common;
+			this.password = common;
+		}
+	}
+}

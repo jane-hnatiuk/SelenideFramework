@@ -1,0 +1,10 @@
+target
+documents
+results
+*~
+~*
+*.~
+.idea/workspace.xml
+.idea/tasks.xml
+*.orig
+*.html
