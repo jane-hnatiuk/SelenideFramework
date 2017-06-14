@@ -4,11 +4,8 @@ results
 *~
 ~*
 *.~
-.idea
-.idea/workspace.xml
-.idea/tasks.xml
-*.orig
-*.html
+.idea/*
+
 '.idea' 
 .gitignore
 .gitattributes
