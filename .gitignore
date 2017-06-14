@@ -9,3 +9,7 @@ results
 .idea/tasks.xml
 *.orig
 *.html
+'.idea' 
+.gitignore
+.gitattributes
+SelenideFramework.iml
